@@ -46,7 +46,7 @@ extension Socket {
                 sin_len: UInt8(MemoryLayout<sockaddr_in>.stride),
                 sin_family: UInt8(AF_INET),
                 sin_port: port.bigEndian,
-                sin_addr: in_addr(s_addr: in_addr_t(0)),
+                sin_addr: in_addr(s_addr: inet_addr("127.0.0.1")),
                 sin_zero:(0, 0, 0, 0, 0, 0, 0, 0))
             #endif
             if let address = listenAddress {
